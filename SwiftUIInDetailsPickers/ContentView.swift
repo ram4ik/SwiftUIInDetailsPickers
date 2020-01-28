@@ -9,8 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    var colors = ["red", "green", "blue"]
+    @State private var selectedColor = 0
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Picker(selection: $selectedColor, label:
+                Text("Select Color")) {
+                ForEach(0..<colors.count) {
+                    Text(self.colors[$0])
+                }
+            }
+            Text("Your choise: \(colors[selectedColor])")
+        }
+    .padding()
     }
 }
 
