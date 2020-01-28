@@ -19,7 +19,7 @@ struct ContentView: View {
                 ForEach(0..<colors.count) {
                     Text(self.colors[$0])
                 }
-            }
+            }.pickerStyle(SegmentedPickerStyle())
             Text("Your choise: \(colors[selectedColor])")
         }
     .padding()
